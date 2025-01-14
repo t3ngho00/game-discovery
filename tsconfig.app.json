@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ESNext", // Updated to ESNext as per the image
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext", // Kept ESNext, consistent with the image
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "Bundler", // Kept Bundler, consistent with the image
+    "allowImportingTsExtensions": true, // You had this before, it's fine to keep it unless you encounter issues
+    "isolatedModules": true, // You had this before, it's generally a good practice
+    "moduleDetection": "force", // You had this before, ensuring consistent module detection
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+    /* Path Aliases - Added from the image */
+    "paths": {
+      "@/*": ["./src/*"] // Assuming your source files are in the 'src' directory
+    }
+  },
+  "include": ["src"]
+}
