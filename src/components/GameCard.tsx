@@ -1,4 +1,4 @@
-import { Game } from "../hooks/useGame";
+import { Game } from "../hooks/useGames";
 import { Card, Heading, HStack, Image } from "@chakra-ui/react";
 import PlatFormIconList from "./PlatFormIconList";
 import CriticScore from "./CriticScore";
@@ -6,6 +6,7 @@ import CriticScore from "./CriticScore";
 interface Props {
   game: Game;
 }
+
 const GameCard = ({ game }: Props) => {
   return (
     <Card.Root>

@@ -1,6 +1,13 @@
 import { HStack } from "@chakra-ui/react";
-import { Platform } from "../hooks/useGame";
-import { FaWindows, FaPlaystation, FaXbox, FaApple, FaLinux, FaAndroid } from "react-icons/fa";
+import { Platform } from "../hooks/useGames";
+import {
+  FaWindows,
+  FaPlaystation,
+  FaXbox,
+  FaApple,
+  FaLinux,
+  FaAndroid,
+} from "react-icons/fa";
 import { SiNintendo } from "react-icons/si";
 import { IconType } from "react-icons";
 
