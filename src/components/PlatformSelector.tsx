@@ -4,7 +4,6 @@ import {
   Button,
   MenuContent,
   MenuItem,
-  MenuItemCommand,
   MenuRoot,
   MenuTrigger,
 } from "@chakra-ui/react";
@@ -22,7 +21,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
     <MenuRoot>
       <MenuTrigger asChild>
         <Button variant="outline" size="sm">
-          {selectedPlatform?.name || "Platform"}
+          {selectedPlatform?.name || "Platforms"}
           <BsChevronDown />
         </Button>
       </MenuTrigger>
