@@ -10,7 +10,7 @@ interface Props {
 const GameCard = ({ game }: Props) => {
   return (
     <Card.Root>
-      <Image src={game.background_image}></Image>
+      <Image src={game.background_image? game.background_image: 'https://placehold.co/540x303'}></Image>
       <Card.Body>
         <Heading>{game.name}</Heading>
         <HStack justifyContent={"space-between"}>
