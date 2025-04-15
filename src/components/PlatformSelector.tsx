@@ -7,7 +7,7 @@ import {
 } from "../components/ui/menu";
 
 import { BsChevronDown } from "react-icons/bs";
-import { Platform } from "../hooks/useGames";
+import { Platform } from "../hooks/usePlatforms";
 import usePlatforms from "../hooks/usePlatforms";
 
 interface Props {
