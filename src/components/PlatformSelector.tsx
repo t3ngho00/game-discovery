@@ -12,22 +12,23 @@ import usePlatforms from "../hooks/usePlatforms";
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;
-  selectedPlatform: Platform | null;
+  selectedPlatformId?: number;
 }
 
-const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
-  const { data, error } = usePlatforms();
+const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
+  const { data: platforms, error } = usePlatforms();
+  const platform = platforms.results.find(p => p.id == selectedPlatformId);
   if (error) return null;
   return (
     <MenuRoot>
       <MenuTrigger asChild>
         <Button variant="outline" size="sm">
-          {selectedPlatform?.name || "Platforms"}
+          {platform?.name || "Platforms"}
           <BsChevronDown />
         </Button>
       </MenuTrigger>
       <MenuContent>
-        {data.results.map((platform: Platform) => (
+        {platforms.results.map((platform: Platform) => (
           <MenuItem
             onClick={() => onSelectPlatform(platform)}
             value={platform.name}
