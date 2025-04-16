@@ -9,7 +9,7 @@ import {
 import { BsChevronDown } from "react-icons/bs";
 import { Platform } from "../hooks/usePlatforms";
 import usePlatforms from "../hooks/usePlatforms";
-import usePlatform from "@/hooks/usePlatform";
+import usePlatform from "../hooks/usePlatform";
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;
