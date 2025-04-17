@@ -3,28 +3,23 @@ import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import { GameQuery } from "@/App";
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-interface Props {
-  gameQuery: GameQuery;
-}
-
-const GameGrid = ({ gameQuery }: Props) => {
+const GameGrid = () => {
   const {
     data,
     error,
     isLoading,
     hasNextPage,
     fetchNextPage,
-  } = useGames(gameQuery);
+  } = useGames();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
   if (error) return <Text>{error.message}</Text>;
   const totalGameFetched = data?.pages.reduce((total, page) => total + page.results.length, 0) || 0;
   return (
     <InfiniteScroll
-      dataLength={totalGameFetched} // The total elements fetch so far
+      dataLength={totalGameFetched}
       hasMore={!!hasNextPage}
       next={() => fetchNextPage()}
       loader={<Spinner />}
