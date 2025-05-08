@@ -24,7 +24,7 @@ const GameGrid = () => {
       next={() => fetchNextPage()}
       loader={<Spinner />}
     >
-      <SimpleGrid padding="10px" minChildWidth={"sm"} gap={3}>
+      <SimpleGrid padding="10px" minChildWidth={"sm"} gap={5}>
         {isLoading &&
           skeletons.map((skeleton) => (
             <GameCardContainer key={skeleton}>

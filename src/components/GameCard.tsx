@@ -2,6 +2,7 @@ import { Game } from "../hooks/useGames";
 import { Card, Heading, HStack, Image } from "@chakra-ui/react";
 import PlatFormIconList from "./PlatFormIconList";
 import CriticScore from "./CriticScore";
+import { Link } from "react-router-dom";
 
 interface Props {
   game: Game;
@@ -18,7 +19,7 @@ const GameCard = ({ game }: Props) => {
         }
       ></Image>
       <Card.Body>
-        <Heading>{game.name}</Heading>
+        <Heading><Link to={`/games/${game.slug}`}>{game.name}</Link></Heading>
         <HStack justifyContent={"space-between"}>
           <PlatFormIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
